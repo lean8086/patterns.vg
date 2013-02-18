@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <title>{Title}</title>
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="{RSS}"/>
+
+        <style>
+            body {
+                background-color: white;
+                color: #666;
+                font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            }
+
+            nav {
+                position: fixed;
+                top: 1em;
+                left: 0;
+                bottom: 0;
+                width: 13em;
+                text-align: right;
+            }
+
+            h1 {
+                text-transform: lowercase;
+                color: #6C9C2C;
+            }
+
+            ul {
+                list-style: none;
+            }
+
+            li a,
+            li a:visited,
+            li a:active,
+            li a:hover {
+                font-size: 0.8em;
+                text-transform: uppercase;
+                text-decoration: none;
+                color: #666;
+                line-height: 2em;
+            }
+
+            li a:hover {
+                text-decoration: underline;
+            }
+
+            aside {
+                position: absolute;
+                right: 0;
+                bottom: 2em;
+                font-size: 0.7em;
+                color: #aaa;
+            }
+
+            section {
+                padding-left: 13em;
+            }
+
+            article {
+                font-size: 0.8em;
+                float: left;
+                width: 50%;
+                padding-top: 2.5em;
+            }
+
+            article img,
+            article span {
+                margin-left: 10%;
+            }
+
+            article p {
+                margin: 0.5em 0 0 10%;
+                font-weight: bold;
+                font-size: 1.4em;
+            }
+        </style>
+    </head>
+    <body>
+
+        <nav>
+            <h1>{Title}</h1>
+
+            <ul>
+                <li><a href="/">Recently added</a></li>
+                <li><a href="/tagged/landscape">Orientation: landscape</a></li>
+                <li><a href="/tagged/portrait">Orientation: portrait</a></li>
+                <li><a href="/tagged/game_launch">Game launch</a></li>
+                <li><a href="/tagged/loading">Loading</a></li>
+                <li><a href="/tagged/main_menu">Main menu</a></li>
+                <li><a href="/tagged/settings">Settings</a></li>
+                <li><a href="/tagged/pause_menu">Pause menu</a></li>
+                <li><a href="/tagged/level_select">Level select</a></li>
+                <li><a href="/tagged/store">Store</a></li>
+                <li><a href="/tagged/tutorial">Tutorial</a></li>
+                <li><a href="/tagged/achievements">Achievements</a></li>
+                <li><a href="/tagged/end_of_level">End of level</a></li>
+            </ul>
+        </nav>
+
+        <section>
+            {block:Posts}
+                {block:Photo}
+                    <article>
+                        <img src="{PhotoURL-500}" alt="{PhotoAlt}"/>
+                        {Caption}
+                        <span>{block:Tags}{Tag} - {/block:Tags}<time pubdate datetime="{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero} {24HourWithZero}:{Minutes}">{TimeAgo}.</time></span>
+                    </article>
+                {/block:Photo}
+            {/block:Posts}
+        </section>
+
+        <script>
+            var _gaq=[['_setAccount','UA-37689023-1'],['_trackPageview']];
+            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+            g.src='http://www.google-analytics.com/ga.js';
+            s.parentNode.insertBefore(g,s)}(document,'script'));
+        </script>
+    </body>
+</html>
