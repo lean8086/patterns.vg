@@ -33,7 +33,7 @@
             {block:Photo}
                 <article>
                     <img src="{PhotoURL-500}" alt="{PhotoAlt}"/>
-                    {block:Caption}<h3>{Caption}</h3>{/block:Caption}
+                    {Caption}
                     <span>{block:Tags}{Tag} - {/block:Tags}<time pubdate datetime="{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero} {24HourWithZero}:{Minutes}">{TimeAgo}.</time></span>
                 </article>
             {/block:Photo}
