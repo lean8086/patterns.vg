@@ -1,0 +1,164 @@
+@font-face {
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: 200;
+    src: local('Source Sans Pro ExtraLight'), local('SourceSansPro-ExtraLight'), url(http://themes.googleusercontent.com/static/fonts/sourcesanspro/v5/toadOcfmlt9b38dHJxOBGC-IiwWNzQT_LXAtr-Ee9Pw.woff) format('woff');
+}
+
+@font-face {
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Source Sans Pro'), local('SourceSansPro-Regular'), url(http://themes.googleusercontent.com/static/fonts/sourcesanspro/v5/ODelI1aHBYDBqgeIAH2zlNHq-FFgoDNV3GTKpHwuvtI.woff) format('woff');
+}
+
+body {
+    background-color: white;
+    color: #666;
+    font-family: 'Source Sans Pro', serif;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 11em;
+    background-color: #6BB130;
+}
+
+h1 {
+    margin: 2em 3em 2em 2em;
+    font-size: 0.9em;
+    position: relative;
+}
+
+h1 img {
+    width: 100%;
+}
+
+@-webkit-keyframes gearbig { to { -webkit-transform: rotate(360deg); } }
+@-moz-keyframes gearbig { to { -moz-transform: rotate(360deg); } }
+@-ms-keyframes gearbig { to { -ms-transform: rotate(360deg); } }
+@-o-keyframes gearbig { to { -o-transform: rotate(360deg); } }
+@keyframes gearbig { to { transform: rotate(360deg); } }
+
+#gear_big {
+    position: absolute;
+    width: 60%;
+    left: 0;
+    top: 35%;
+    -webkit-animation: gearbig 10s linear 0 infinite;
+    -moz-animation: gearbig 10s linear 0 infinite;
+    -ms-animation: gearbig 10s linear 0 infinite;
+    -o-animation: gearbig 10s linear 0 infinite;
+    animation: gearbig 10s linear 0 infinite;
+}
+
+@-webkit-keyframes gearsmall { to { -webkit-transform: rotate(-360deg); } }
+@-moz-keyframes gearsmall { to { -moz-transform: rotate(-360deg); } }
+@-ms-keyframes gearsmall { to { -ms-transform: rotate(-360deg); } }
+@-o-keyframes gearsmall { to { -o-transform: rotate(-360deg); } }
+@keyframes gearsmall { to { transform: rotate(-360deg); } }
+
+#gear_small {
+    position: absolute;
+    width: 30%;
+    left: 56%;
+    top: 28%;
+    -webkit-animation: gearsmall 6450ms linear 0 infinite;
+    -moz-animation: gearsmall 6450ms linear 0 infinite;
+    -ms-animation: gearsmall 6450ms linear 0 infinite;
+    -o-animation: gearsmall 6450ms linear 0 infinite;
+    animation: gearsmall 6450ms linear 0 infinite;
+}
+
+header ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+header a,
+header a:visited,
+header a:active {
+    display: block;
+    font-size: 0.9em;
+    text-decoration: none;
+    color: white;
+    padding: 1em 2em;
+    position: relative;
+}
+
+header a:hover,
+[data-selected='game+launch'] [data-safe='game+launch'],
+[data-selected='loading'] [data-safe='loading'],
+[data-selected='main+menu'] [data-safe='main+menu'],
+[data-selected='settings'] [data-safe='settings'],
+[data-selected='pause+menu'] [data-safe='pause+menu'],
+[data-selected='level+select'] [data-safe='level+select'],
+[data-selected='store'] [data-safe='store'],
+[data-selected='tutorial'] [data-safe='tutorial'],
+[data-selected='achievements'] [data-safe='achievements'],
+[data-selected='end+of+level'] [data-safe='end+of+level'] {
+    background-color: #508922;
+}
+
+[data-selected='game+launch'] [data-safe='game+launch']:after,
+[data-selected='loading'] [data-safe='loading']:after,
+[data-selected='main+menu'] [data-safe='main+menu']:after,
+[data-selected='settings'] [data-safe='settings']:after,
+[data-selected='pause+menu'] [data-safe='pause+menu']:after,
+[data-selected='level+select'] [data-safe='level+select']:after,
+[data-selected='store'] [data-safe='store']:after,
+[data-selected='tutorial'] [data-safe='tutorial']:after,
+[data-selected='achievements'] [data-safe='achievements']:after,
+[data-selected='end+of+level'] [data-safe='end+of+level']:after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    left: 100%;
+    top: 0;
+    position: absolute;
+    border: outset transparent;
+    border-width: 1.6em 0.75em;
+    border-left-style: solid;
+    border-left-color: #508922;
+}
+
+h2 {
+    font-weight: 200;
+    font-size: 3em;
+    padding-right: 3em;
+}
+
+h2 strong {
+    color: #6BB130;
+    font-weight: 400;
+}
+
+section {
+    padding-left: 14em;
+}
+
+article {
+    background-color: #eee;
+    border-radius: 0.5em;
+    float: left;
+    padding: 1em;
+    margin: 0 1em 2em 0;
+}
+
+article img {
+    border: 1px solid #ddd;
+    max-width: 100%;
+}
+
+article p {
+    font-size: 1.4em;
+    margin: 0.4em 0 0;
+}
+
+article span {
+    font-weight: 200;
+}
