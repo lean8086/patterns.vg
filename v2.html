@@ -32,7 +32,7 @@
         <ol>
             {block:Posts}{block:Photo}<li>
                 <article>
-                    <img src="{PhotoURL-500}" alt="{PhotoAlt}"/>
+                    <img data-src="{PhotoURL-500}"/>
                     {Caption}
                     <span>{block:Tags}{Tag} - {/block:Tags}<time pubdate datetime="{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero} {24HourWithZero}:{Minutes}">{TimeAgo}.</time></span>
                 </article>
@@ -40,6 +40,6 @@
         </ol>
     </section>
 
-    <script>/* Insert gears */document.getElementsByTagName('h1')[0].innerHTML+='<img id="gear_big" src="http://llinares.github.com/patterns.vg/gear_big.svg"/><img id="gear_small" src="http://llinares.github.com/patterns.vg/gear_small.svg"/>';/* Analytics */var _gaq=[['_setAccount','UA-37689023-1'],['_trackPageview']];(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.src='http://www.google-analytics.com/ga.js';s.parentNode.insertBefore(g,s)}(document,'script'));</script>
+    <script>/* Insert gears */document.getElementsByTagName('h1')[0].innerHTML+='<img id="gear_big" src="http://llinares.github.com/patterns.vg/gear_big.svg"/><img id="gear_small" src="http://llinares.github.com/patterns.vg/gear_small.svg"/>';/* Load images onload */var g=document.querySelectorAll('ol img'),i=0,j=g.length;window.onload=function(){for(i;i<j;i+=1)g[i].src=g[i].dataset.src;};/* Analytics */var _gaq=[['_setAccount','UA-37689023-1'],['_trackPageview']];(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.src='http://www.google-analytics.com/ga.js';s.parentNode.insertBefore(g,s)}(document,'script'));</script>
 </body>
 </html>
