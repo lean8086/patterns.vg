@@ -90,29 +90,29 @@ header a:active {
 }
 
 header a:hover,
-[data-selected='game+launch'] [data-safe='game+launch'],
-[data-selected='loading'] [data-safe='loading'],
-[data-selected='main+menu'] [data-safe='main+menu'],
-[data-selected='settings'] [data-safe='settings'],
-[data-selected='pause+menu'] [data-safe='pause+menu'],
-[data-selected='level+select'] [data-safe='level+select'],
-[data-selected='store'] [data-safe='store'],
-[data-selected='tutorial'] [data-safe='tutorial'],
-[data-selected='achievements'] [data-safe='achievements'],
-[data-selected='end+of+level'] [data-safe='end+of+level'] {
+[data-selected='game+launch'] [data-tag='game+launch'],
+[data-selected='loading'] [data-tag='loading'],
+[data-selected='main+menu'] [data-tag='main+menu'],
+[data-selected='settings'] [data-tag='settings'],
+[data-selected='pause+menu'] [data-tag='pause+menu'],
+[data-selected='level+select'] [data-tag='level+select'],
+[data-selected='store'] [data-tag='store'],
+[data-selected='tutorial'] [data-tag='tutorial'],
+[data-selected='achievements'] [data-tag='achievements'],
+[data-selected='end+of+level'] [data-tag='end+of+level'] {
     background-color: #508922;
 }
 
-[data-selected='game+launch'] [data-safe='game+launch']:after,
-[data-selected='loading'] [data-safe='loading']:after,
-[data-selected='main+menu'] [data-safe='main+menu']:after,
-[data-selected='settings'] [data-safe='settings']:after,
-[data-selected='pause+menu'] [data-safe='pause+menu']:after,
-[data-selected='level+select'] [data-safe='level+select']:after,
-[data-selected='store'] [data-safe='store']:after,
-[data-selected='tutorial'] [data-safe='tutorial']:after,
-[data-selected='achievements'] [data-safe='achievements']:after,
-[data-selected='end+of+level'] [data-safe='end+of+level']:after {
+[data-selected='game+launch'] [data-tag='game+launch']:after,
+[data-selected='loading'] [data-tag='loading']:after,
+[data-selected='main+menu'] [data-tag='main+menu']:after,
+[data-selected='settings'] [data-tag='settings']:after,
+[data-selected='pause+menu'] [data-tag='pause+menu']:after,
+[data-selected='level+select'] [data-tag='level+select']:after,
+[data-selected='store'] [data-tag='store']:after,
+[data-selected='tutorial'] [data-tag='tutorial']:after,
+[data-selected='achievements'] [data-tag='achievements']:after,
+[data-selected='end+of+level'] [data-tag='end+of+level']:after {
     content: '';
     display: block;
     width: 0;
@@ -141,12 +141,22 @@ section {
     padding-left: 14em;
 }
 
+ol {
+    list-style: none;
+    overflow: hidden;
+    padding-left: 0;
+}
+
+ol li {
+    overflow: hidden;
+}
+
 article {
+    display: inline-block;
     background-color: #eee;
     border-radius: 0.5em;
-    float: left;
     padding: 1em;
-    margin: 0 1em 2em 0;
+    margin: 0 0.5em 2em 0;
 }
 
 article img {
@@ -161,4 +171,11 @@ article p {
 
 article span {
     font-weight: 200;
+}
+
+@media all and (min-width:1024px) {
+    ol li {
+        float: left;
+        width: 50%;
+    }
 }

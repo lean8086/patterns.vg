@@ -13,31 +13,35 @@
         <h1><img src="http://llinares.github.com/patterns.vg/phone.svg" alt="{Title}"/></h1>
         <nav data-selected="{block:TagPage}{URLSafeTag}{/block:TagPage}">
             <ul>
-                <li><a href="/tagged/game_launch" data-safe="game+launch">Game launch</a></li>
-                <li><a href="/tagged/loading" data-safe="loading">Loading</a></li>
-                <li><a href="/tagged/main_menu" data-safe="main+menu">Main menu</a></li>
-                <li><a href="/tagged/settings" data-safe="settings">Settings</a></li>
-                <li><a href="/tagged/pause_menu" data-safe="pause+menu">Pause menu</a></li>
-                <li><a href="/tagged/level_select" data-safe="level+select">Level select</a></li>
-                <li><a href="/tagged/store" data-safe="store">Store</a></li>
-                <li><a href="/tagged/tutorial" data-safe="tutorial">Tutorial</a></li>
-                <li><a href="/tagged/achievements" data-safe="achievements">Achievements</a></li>
-                <li><a href="/tagged/end_of_level" data-safe="end+of+level">End of level</a></li>
+                <li><a href="/tagged/game_launch" data-tag="game+launch">Game launch</a></li>
+                <li><a href="/tagged/loading" data-tag="loading">Loading</a></li>
+                <li><a href="/tagged/main_menu" data-tag="main+menu">Main menu</a></li>
+                <li><a href="/tagged/settings" data-tag="settings">Settings</a></li>
+                <li><a href="/tagged/pause_menu" data-tag="pause+menu">Pause menu</a></li>
+                <li><a href="/tagged/level_select" data-tag="level+select">Level select</a></li>
+                <li><a href="/tagged/store" data-tag="store">Store</a></li>
+                <li><a href="/tagged/tutorial" data-tag="tutorial">Tutorial</a></li>
+                <li><a href="/tagged/achievements" data-tag="achievements">Achievements</a></li>
+                <li><a href="/tagged/end_of_level" data-tag="end+of+level">End of level</a></li>
             </ul>
         </nav>
     </header>
 
     <section>
         <h2>Collection of <strong>design patterns</strong> for mobile game developers inspiration.</h2>
-        {block:Posts}
-            {block:Photo}
-                <article>
-                    <img src="{PhotoURL-500}" alt="{PhotoAlt}"/>
-                    {Caption}
-                    <span>{block:Tags}{Tag} - {/block:Tags}<time pubdate datetime="{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero} {24HourWithZero}:{Minutes}">{TimeAgo}.</time></span>
-                </article>
-            {/block:Photo}
-        {/block:Posts}
+        <ol>
+            {block:Posts}
+                {block:Photo}
+                    <li>
+                        <article>
+                            <img src="{PhotoURL-500}" alt="{PhotoAlt}"/>
+                            {Caption}
+                            <span>{block:Tags}{Tag} - {/block:Tags}<time pubdate datetime="{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero} {24HourWithZero}:{Minutes}">{TimeAgo}.</time></span>
+                        </article>
+                    </li>
+                {/block:Photo}
+            {/block:Posts}
+        </ol>
     </section>
 
     <script>/* Insert gears */document.getElementsByTagName('h1')[0].innerHTML+='<img id="gear_big" src="http://llinares.github.com/patterns.vg/gear_big.svg"/><img id="gear_small" src="http://llinares.github.com/patterns.vg/gear_small.svg"/>';/* Analytics */var _gaq=[['_setAccount','UA-37689023-1'],['_trackPageview']];(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.src='http://www.google-analytics.com/ga.js';s.parentNode.insertBefore(g,s)}(document,'script'));</script>
