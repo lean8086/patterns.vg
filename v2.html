@@ -30,17 +30,13 @@
     <section>
         <h2>Collection of <strong>design patterns</strong> for mobile game developers inspiration.</h2>
         <ol>
-            {block:Posts}
-                {block:Photo}
-                    <li>
-                        <article>
-                            <img src="{PhotoURL-500}" alt="{PhotoAlt}"/>
-                            {Caption}
-                            <span>{block:Tags}{Tag} - {/block:Tags}<time pubdate datetime="{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero} {24HourWithZero}:{Minutes}">{TimeAgo}.</time></span>
-                        </article>
-                    </li>
-                {/block:Photo}
-            {/block:Posts}
+            {block:Posts}{block:Photo}<li>
+                <article>
+                    <img src="{PhotoURL-500}" alt="{PhotoAlt}"/>
+                    {Caption}
+                    <span>{block:Tags}{Tag} - {/block:Tags}<time pubdate datetime="{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero} {24HourWithZero}:{Minutes}">{TimeAgo}.</time></span>
+                </article>
+            </li>{/block:Photo}{/block:Posts}
         </ol>
     </section>
 

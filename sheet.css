@@ -129,7 +129,7 @@ header a:hover,
 h2 {
     font-weight: 200;
     font-size: 3em;
-    padding-right: 3em;
+    margin: 1em;
 }
 
 h2 strong {
@@ -138,7 +138,7 @@ h2 strong {
 }
 
 section {
-    padding-left: 14em;
+    padding-left: 11em;
 }
 
 ol {
@@ -149,14 +149,16 @@ ol {
 
 ol li {
     overflow: hidden;
+    text-align: center;
 }
 
 article {
-    display: inline-block;
     background-color: #eee;
     border-radius: 0.5em;
     padding: 1em;
-    margin: 0 0.5em 2em 0;
+    margin: 0 0.5em 2em;
+    text-align: left;
+    display: inline-block;
 }
 
 article img {
@@ -175,7 +177,8 @@ article span {
 
 @media all and (min-width:1024px) {
     ol li {
-        float: left;
+        display: inline-block;
+        vertical-align: top;
         width: 50%;
     }
 }
