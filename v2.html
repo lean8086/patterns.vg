@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <script>if(location.pathname=='/')location='/tagged/game_launch'</script>
+    <script>if(location.pathname=='/')location='/tagged/game-launch'</script>
     <meta charset="utf-8"/>
     <title>{Title}</title>
     <link rel="alternate" type="application/rss+xml" title="RSS" href="{RSS}"/>
@@ -13,16 +13,16 @@
         <h1><img src="http://llinares.github.com/patterns.vg/phone.svg" alt="{Title}"/></h1>
         <nav data-selected="{block:TagPage}{URLSafeTag}{/block:TagPage}">
             <ul>
-                <li><a href="/tagged/game_launch" data-tag="game+launch">Game launch</a></li>
+                <li><a href="/tagged/game-launch" data-tag="game+launch">Game launch</a></li>
                 <li><a href="/tagged/loading" data-tag="loading">Loading</a></li>
-                <li><a href="/tagged/main_menu" data-tag="main+menu">Main menu</a></li>
+                <li><a href="/tagged/main-menu" data-tag="main+menu">Main menu</a></li>
                 <li><a href="/tagged/settings" data-tag="settings">Settings</a></li>
-                <li><a href="/tagged/pause_menu" data-tag="pause+menu">Pause menu</a></li>
-                <li><a href="/tagged/level_select" data-tag="level+select">Level select</a></li>
+                <li><a href="/tagged/pause-menu" data-tag="pause+menu">Pause menu</a></li>
+                <li><a href="/tagged/level-select" data-tag="level+select">Level select</a></li>
                 <li><a href="/tagged/store" data-tag="store">Store</a></li>
                 <li><a href="/tagged/tutorial" data-tag="tutorial">Tutorial</a></li>
                 <li><a href="/tagged/achievements" data-tag="achievements">Achievements</a></li>
-                <li><a href="/tagged/end_of_level" data-tag="end+of+level">End of level</a></li>
+                <li><a href="/tagged/end-of-level" data-tag="end+of+level">End of level</a></li>
             </ul>
         </nav>
     </header>
@@ -32,7 +32,7 @@
         <ol>
             {block:Posts}{block:Photo}<li>
                 <article>
-                    <img data-src="{PhotoURL-500}"/>
+                    <img data-async="{PhotoURL-500}"/>
                     {Caption}
                     <span>{block:Tags}{Tag} - {/block:Tags}<time pubdate datetime="{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero} {24HourWithZero}:{Minutes}">{TimeAgo}.</time></span>
                 </article>
@@ -40,6 +40,6 @@
         </ol>
     </section>
 
-    <script>/* Insert gears */document.getElementsByTagName('h1')[0].innerHTML+='<img id="gear_big" src="http://llinares.github.com/patterns.vg/gear_big.svg"/><img id="gear_small" src="http://llinares.github.com/patterns.vg/gear_small.svg"/>';/* Load images onload */var g=document.querySelectorAll('ol img'),i=0,j=g.length;window.onload=function(){for(i;i<j;i+=1)g[i].src=g[i].dataset.src;};/* Analytics */var _gaq=[['_setAccount','UA-37689023-1'],['_trackPageview']];(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.src='http://www.google-analytics.com/ga.js';s.parentNode.insertBefore(g,s)}(document,'script'));</script>
+    <script>var d=document,$=function(n){return d.getElementsByTagName(n)[0]},u=' src="http://llinares.github.com/patterns.vg/g',o=$('ol').style,h=d.querySelectorAll('[data-async]'),i=0,j=h.length,_gaq=[['_setAccount','UA-37689023-1'],['_trackPageview']],g=d.createElement('script'),s=$('script');/* Load imgs */window.onload=function(){o.display='none';for(i;i<j;i+=1)h[i].src=h[i].dataset.async;o.display=''};/* Insert gears */$('h1').innerHTML+='<img id="gbg"'+u+'bg.svg"/><img id="gsm"'+u+'sm.svg"/>';/* Analytics */g.src='http://www.google-analytics.com/ga.js';s.parentNode.insertBefore(g,s)</script>
 </body>
 </html>

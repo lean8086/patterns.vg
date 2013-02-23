@@ -43,7 +43,7 @@ h1 img {
 @-o-keyframes gearbig { to { -o-transform: rotate(360deg); } }
 @keyframes gearbig { to { transform: rotate(360deg); } }
 
-#gear_big {
+#gbg {
     position: absolute;
     width: 60%;
     left: 0;
@@ -61,7 +61,7 @@ h1 img {
 @-o-keyframes gearsmall { to { -o-transform: rotate(-360deg); } }
 @keyframes gearsmall { to { transform: rotate(-360deg); } }
 
-#gear_small {
+#gsm {
     position: absolute;
     width: 30%;
     left: 56%;
