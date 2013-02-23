@@ -15,7 +15,7 @@
 body {
     background-color: white;
     color: #666;
-    font-family: 'Source Sans Pro', serif;
+    font-family: 'Source Sans Pro', sans-serif;
 }
 
 header {
@@ -37,40 +37,37 @@ h1 img {
     width: 100%;
 }
 
-@-webkit-keyframes gearbig { to { -webkit-transform: rotate(360deg); } }
-@-moz-keyframes gearbig { to { -moz-transform: rotate(360deg); } }
-@-ms-keyframes gearbig { to { -ms-transform: rotate(360deg); } }
-@-o-keyframes gearbig { to { -o-transform: rotate(360deg); } }
-@keyframes gearbig { to { transform: rotate(360deg); } }
+@-webkit-keyframes rotation { to { -webkit-transform: rotate(360deg); } }
+@-moz-keyframes rotation { to { -moz-transform: rotate(360deg); } }
+@-ms-keyframes rotation { to { -ms-transform: rotate(360deg); } }
+@-o-keyframes rotation { to { -o-transform: rotate(360deg); } }
+@keyframes rotation { to { transform: rotate(360deg); } }
+
+#gbg,
+#gsm {
+    position: absolute;
+    -webkit-animation: rotation linear infinite;
+    animation: rotation linear infinite;
+}
 
 #gbg {
     position: absolute;
     width: 60%;
     left: 0;
     top: 35%;
-    -webkit-animation: gearbig 10s linear 0 infinite;
-    -moz-animation: gearbig 10s linear 0 infinite;
-    -ms-animation: gearbig 10s linear 0 infinite;
-    -o-animation: gearbig 10s linear 0 infinite;
-    animation: gearbig 10s linear 0 infinite;
+    -webkit-animation-duration: 10s;
+    animation-duration: 10s;
 }
-
-@-webkit-keyframes gearsmall { to { -webkit-transform: rotate(-360deg); } }
-@-moz-keyframes gearsmall { to { -moz-transform: rotate(-360deg); } }
-@-ms-keyframes gearsmall { to { -ms-transform: rotate(-360deg); } }
-@-o-keyframes gearsmall { to { -o-transform: rotate(-360deg); } }
-@keyframes gearsmall { to { transform: rotate(-360deg); } }
 
 #gsm {
     position: absolute;
     width: 30%;
     left: 56%;
     top: 28%;
-    -webkit-animation: gearsmall 6450ms linear 0 infinite;
-    -moz-animation: gearsmall 6450ms linear 0 infinite;
-    -ms-animation: gearsmall 6450ms linear 0 infinite;
-    -o-animation: gearsmall 6450ms linear 0 infinite;
-    animation: gearsmall 6450ms linear 0 infinite;
+    -webkit-animation-duration: 6450ms;
+    animation-duration: 6450ms;
+    -webkit-animation-direction: reverse;
+    animation-direction: reverse;
 }
 
 header ul {
@@ -126,6 +123,10 @@ header a:hover,
     border-left-color: #508922;
 }
 
+section {
+    padding-left: 11em;
+}
+
 h2 {
     font-weight: 200;
     font-size: 3em;
@@ -135,10 +136,6 @@ h2 {
 h2 strong {
     color: #6BB130;
     font-weight: 400;
-}
-
-section {
-    padding-left: 11em;
 }
 
 ol {
@@ -164,7 +161,6 @@ article {
 article img {
     border: 1px solid #ddd;
     max-width: 100%;
-    background: transparent url(http://assets.tumblr.com/images/loading_reblog.gif) center center no-repeat;
 }
 
 article p {
