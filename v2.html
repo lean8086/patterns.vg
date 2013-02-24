@@ -34,12 +34,12 @@
                 <article>
                     <img data-async="{PhotoURL-500}"/>
                     {Caption}
-                    <span>{block:Tags}{Tag} - {/block:Tags}<time pubdate datetime="{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero} {24HourWithZero}:{Minutes}">{TimeAgo}.</time></span>
+                    <time pubdate datetime="{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}T{24HourWithZero}:{Minutes}:{Seconds}Z">{TimeAgo}</time>
                 </article>
             </li>{/block:Photo}{/block:Posts}
         </ol>
     </section>
 
-    <script>var d=document,$=function(n){return d.getElementsByTagName(n)[0]},u=' src="http://llinares.github.com/patterns.vg/g',o=$('ol').style,h=d.querySelectorAll('[data-async]'),i=0,j=h.length,_gaq=[['_setAccount','UA-37689023-1'],['_trackPageview']],g=d.createElement('script'),s=$('script');/* Load imgs */window.onload=function(){o.display='none';for(i;i<j;i+=1)h[i].src=h[i].dataset.async;o.display=''};/* Insert gears */$('h1').innerHTML+='<img id="gbg"'+u+'bg.svg"/><img id="gsm"'+u+'sm.svg"/>';/* Analytics */g.src='http://www.google-analytics.com/ga.js';s.parentNode.insertBefore(g,s)</script>
+    <script>var d=document,$=function(n){return d.getElementsByTagName(n)[0]},u=' src="http://llinares.github.com/patterns.vg/g',o=$('ol').style,h=d.querySelectorAll('[data-async]'),i=0,j=h.length,_gaq=[['_setAccount','UA-37689023-1'],['_trackPageview']],g=d.createElement('script'),s=$('script');/* Load imgs */window.onload=function(){o.display='none';for(i;i<j;i+=1)h[i].src=h[i].dataset.async;o.display=''};/* Insert gears */$('h1').innerHTML+='<img id="gbg"'+u+'bg.svg"/><img id="gsm"'+u+'sm.svg"/>';/* Analytics */g.src='http://www.google-analytics.com/ga.js';g.async=true;s.parentNode.insertBefore(g,s)</script>
 </body>
 </html>
