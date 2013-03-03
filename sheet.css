@@ -163,6 +163,8 @@ article img {
     max-width: 100%;
     display: block;
     margin-bottom: 0.75em;
+    background-size: 100%;
+    background-color: #ddd;
 }
 
 article p {

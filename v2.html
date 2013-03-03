@@ -3,9 +3,16 @@
 <head>
     <script>if(location.pathname=='/')location='/tagged/game-launch'</script>
     <meta charset="utf-8"/>
-    <title>{Title}</title>
-    <link rel="alternate" type="application/rss+xml" title="RSS" href="{RSS}"/>
+    <title>{Title}{block:PostSummary} - {PostSummary}{/block:PostSummary}</title>
+
+    {block:Description}<meta name="description" content="{MetaDescription}"/>{/block:Description}
+
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1"/>
+    <meta http-equiv="cleartype" content="on"/>
+
+    <link rel="shortcut icon" href="{Favicon}"/>
     <link rel="stylesheet" href="http://llinares.github.com/patterns.vg/sheet.css"/>
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="{RSS}"/>
 </head>
 <body>
 
@@ -28,18 +35,40 @@
     </header>
 
     <section>
-        <h2>Collection of <strong>design patterns</strong> for mobile game developers inspiration.</h2>
+        {block:IndexPage}<h2>{Description}</h2>{/block:IndexPage}
+
         <ol>
             {block:Posts}{block:Photo}<li>
                 <article>
-                    <img data-async="{PhotoURL-500}"/>
+                    {block:IndexPage}<a href="{Permalink}">{/block:IndexPage}
+                        <img
+                            {block:PermalinkPage}src="{PhotoURL-HighRes}"{/block:PermalinkPage}
+                            {block:IndexPage}data-async="{PhotoURL-HighRes}"{/block:IndexPage}
+                            style="background-image:url({PhotoURL-100})"
+                            width="{PhotoWidth-HighRes}"
+                            height="{PhotoHeight-HighRes}"
+                        />
+                    {block:IndexPage}</a>{/block:IndexPage}
                     {Caption}
                     <time pubdate datetime="{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}T{24HourWithZero}:{Minutes}:{Seconds}Z">{TimeAgo}</time>
                 </article>
+
+                {block:PostNotes}{PostNotes}{/block:PostNotes}
             </li>{/block:Photo}{/block:Posts}
         </ol>
+
+        {block:Pagination}
+            <nav class="pagination">
+                {block:PreviousPage}<a href="{PreviousPage}">&laquo; Previous page</a>{/block:PreviousPage}
+                {block:NextPage}<a href="{NextPage}">Next page&raquo;</a>{/block:NextPage}
+            </nav>
+        {/block:Pagination}
     </section>
 
-    <script>var d=document,$=function(n){return d.getElementsByTagName(n)[0]},u=' src="http://llinares.github.com/patterns.vg/g',o=$('ol').style,h=d.querySelectorAll('[data-async]'),i=0,j=h.length,_gaq=[['_setAccount','UA-37689023-1'],['_trackPageview']],g=d.createElement('script'),s=$('script');/* Load imgs */window.onload=function(){o.display='none';for(i;i<j;i+=1)h[i].src=h[i].dataset.async;o.display=''};/* Insert gears */$('h1').innerHTML+='<img id="gbg"'+u+'bg.svg"/><img id="gsm"'+u+'sm.svg"/>';/* Analytics */g.src='http://www.google-analytics.com/ga.js';g.async=true;s.parentNode.insertBefore(g,s)</script>
+    <script>function $(i){return document.getElementsByTagName(i)[0]}/* Insert gears */var r=' src="http://llinares.github.com/patterns.vg/g';window.addEventListener('load',function(){$('h1').innerHTML+='<img id="gbg"'+r+'bg.svg"/><img id="gsm"'+r+'sm.svg"/>'});/* Analytics */var _gaq=[['_setAccount','UA-37689023-1'],['_trackPageview']],g=document.createElement('script'),s=$('script');g.src='http://www.google-analytics.com/ga.js';g.async=true;s.parentNode.insertBefore(g,s);</script>
+
+    {block:IndexPage}
+        <script>/* Progressive image loader + infinite scroll */(function(win){var doc=win.document,scrollTop,pagination=doc.getElementsByClassName("pagination")[0],loadingPosts=false,xhr=new win.XMLHttpRequest(),page=1,nextHref=win.location.href+(win.location.pathname==="/"?"":"/")+"page/";function loadHighRes(){var imgs=doc.querySelectorAll("[data-async]"),i=imgs.length,img;while(i){img=imgs[i-=1];img.onload=function(){this.removeAttribute("width");this.removeAttribute("height");this.removeAttribute("data-async")};img.src=img.dataset.async;if(img.complete){img.onload();img.onload=function(){}}}}function loadPosts(){if(loadingPosts){return;}loadingPosts=true;xhr.open("GET",nextHref+(page+=1),true);xhr.send()}function checkScroll(){scrollTop=(win.pageYOffset||doc.documentElement.scrollTop||0);if(doc.height-(win.innerHeight+scrollTop)<win.innerHeight*2){loadPosts()}}xhr.onload=function(){if(this.status!==200){return;}var response=this.response.replace(/(\s\s)+/g," "),articles=response.match(/<article>(.*?)<\/article>/ig);if(articles&&articles.length>0){$('ol').innerHTML+="<li>"+articles.join("</li><li>")+"</li>";loadHighRes();loadingPosts=false}};win.addEventListener("resize",checkScroll);win.addEventListener("scroll",checkScroll);win.addEventListener("load",function(){pagination.parentNode.removeChild(pagination);loadHighRes()})}(this))</script>
+    {/block:IndexPage}
 </body>
 </html>
