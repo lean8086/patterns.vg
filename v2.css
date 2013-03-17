@@ -82,7 +82,7 @@ header a:active {
     font-size: 0.9em;
     text-decoration: none;
     color: white;
-    padding: 1em 2em;
+    padding: 0.8em 2em;
     position: relative;
 }
 
@@ -118,7 +118,7 @@ header a:hover,
     top: 0;
     position: absolute;
     border: outset transparent;
-    border-width: 1.6em 0.75em;
+    border-width: 1.46em 0.75em;
     border-left-style: solid;
     border-left-color: #508922;
 }

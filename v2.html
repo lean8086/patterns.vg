@@ -11,7 +11,7 @@
     <meta http-equiv="cleartype" content="on"/>
 
     <link rel="shortcut icon" href="{Favicon}"/>
-    <link rel="stylesheet" href="http://llinares.github.com/patterns.vg/sheet.css"/>
+    <link rel="stylesheet" href="http://llinares.github.com/patterns.vg/v2.css"/>
     <link rel="alternate" type="application/rss+xml" title="RSS" href="{RSS}"/>
 </head>
 <body>
@@ -26,8 +26,12 @@
                 <li><a href="/tagged/settings" data-tag="settings">Settings</a></li>
                 <li><a href="/tagged/pause-menu" data-tag="pause+menu">Pause menu</a></li>
                 <li><a href="/tagged/level-select" data-tag="level+select">Level select</a></li>
+                <li><a href="/tagged/mode-select" data-tag="mode+select">Mode select</a></li>
+                <li><a href="/tagged/scores" data-tag="scores">Scores</a></li>
                 <li><a href="/tagged/store" data-tag="store">Store</a></li>
                 <li><a href="/tagged/tutorial" data-tag="tutorial">Tutorial</a></li>
+                <li><a href="/tagged/objectives" data-tag="objectives">Objectives</a></li>
+                <li><a href="/tagged/level-up" data-tag="level+up">Level up</a></li>
                 <li><a href="/tagged/achievements" data-tag="achievements">Achievements</a></li>
                 <li><a href="/tagged/end-of-level" data-tag="end+of+level">End of level</a></li>
             </ul>
@@ -65,10 +69,10 @@
         {/block:Pagination}
     </section>
 
-    <script>function $(i){return document.getElementsByTagName(i)[0]}/* Insert gears */var r=' src="http://llinares.github.com/patterns.vg/g';window.addEventListener('load',function(){$('h1').innerHTML+='<img id="gbg"'+r+'bg.svg"/><img id="gsm"'+r+'sm.svg"/>'});/* Analytics */var _gaq=[['_setAccount','UA-37689023-1'],['_trackPageview']],g=document.createElement('script'),s=$('script');g.src='http://www.google-analytics.com/ga.js';g.async=true;s.parentNode.insertBefore(g,s);</script>
+    <script>function $(i){return document.getElementsByTagName(i)[0]}/* Insert gears */var r='src="http://llinares.github.com/patterns.vg/g';$('h1').innerHTML+='<img id="gbg" '+r+'bg.svg"/><img id="gsm" '+r+'sm.svg"/>';window.addEventListener('load',function(){/* Analytics */var _gaq=[['_setAccount','UA-37689023-1'],['_trackPageview']],g=document.createElement('script'),s=$('script');g.src='http://www.google-analytics.com/ga.js';g.async=true;s.parentNode.insertBefore(g,s)})</script>
 
     {block:IndexPage}
-        <script>/* Progressive image loader + infinite scroll */(function(win){var doc=win.document,scrollTop,pagination=doc.getElementsByClassName("pagination")[0],loadingPosts=false,xhr=new win.XMLHttpRequest(),page=1,nextHref=win.location.href+(win.location.pathname==="/"?"":"/")+"page/";function loadHighRes(){var imgs=doc.querySelectorAll("[data-async]"),i=imgs.length,img;while(i){img=imgs[i-=1];img.onload=function(){this.removeAttribute("width");this.removeAttribute("height");this.removeAttribute("data-async")};img.src=img.dataset.async;if(img.complete){img.onload();img.onload=function(){}}}}function loadPosts(){if(loadingPosts){return;}loadingPosts=true;xhr.open("GET",nextHref+(page+=1),true);xhr.send()}function checkScroll(){scrollTop=(win.pageYOffset||doc.documentElement.scrollTop||0);if(doc.height-(win.innerHeight+scrollTop)<win.innerHeight*2){loadPosts()}}xhr.onload=function(){if(this.status!==200){return;}var response=this.response.replace(/(\s\s)+/g," "),articles=response.match(/<article>(.*?)<\/article>/ig);if(articles&&articles.length>0){$('ol').innerHTML+="<li>"+articles.join("</li><li>")+"</li>";loadHighRes();loadingPosts=false}};win.addEventListener("resize",checkScroll);win.addEventListener("scroll",checkScroll);win.addEventListener("load",function(){if(pagination){pagination.parentNode.removeChild(pagination)}loadHighRes()})}(this))</script>
+        <script>/* Progressive image loader + infinite scroll */(function(win){var doc=win.document,scrollTop,pagination=doc.getElementsByClassName("pagination")[0],loadingPosts=false,xhr=new win.XMLHttpRequest(),page=1,nextHref=win.location.href+(win.location.pathname==="/"?"":"/")+"page/";if(pagination)pagination.parentNode.removeChild(pagination);function loadHighRes(){var imgs=doc.querySelectorAll("[data-async]"),i=imgs.length,img;while(i){img=imgs[i-=1];img.onload=function(){this.removeAttribute("width");this.removeAttribute("height");this.removeAttribute("data-async")};img.src=img.dataset.async;if(img.complete){img.onload();img.onload=function(){}}}}function loadPosts(){if(loadingPosts){return;}loadingPosts=true;xhr.open("GET",nextHref+(page+=1),true);xhr.send()}function checkScroll(){scrollTop=(win.pageYOffset||doc.documentElement.scrollTop||0);if(doc.height-(win.innerHeight+scrollTop)<win.innerHeight*2){loadPosts()}}xhr.onload=function(){if(this.status!==200){return;}var response=this.response.replace(/(\s\s)+/g," "),articles=response.match(/<article>(.*?)<\/article>/ig);if(articles&&articles.length>0){$('ol').innerHTML+="<li>"+articles.join("</li><li>")+"</li>";loadHighRes();loadingPosts=false}};win.addEventListener("resize",checkScroll);win.addEventListener("scroll",checkScroll);win.addEventListener("load",loadHighRes)}(this))</script>
     {/block:IndexPage}
 </body>
 </html>
