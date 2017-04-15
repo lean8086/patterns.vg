@@ -1,0 +1,226 @@
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 200;
+  src: local('Source Sans Pro ExtraLight'), local('SourceSansPro-ExtraLight'), url(https://fonts.gstatic.com/s/sourcesanspro/v9/toadOcfmlt9b38dHJxOBGIAPdqzPmKFFIYQ-46z3JxY.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Source Sans Pro'), local('SourceSansPro-Regular'), url(https://fonts.gstatic.com/s/sourcesanspro/v9/ODelI1aHBYDBqgeIAH2zlJbPFduIYtoLzwST68uhz_Y.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+
+body {
+  background-color: #fff;
+  color: #666;
+  font-family: 'Source Sans Pro', sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, .1);
+  -webkit-text-size-adjust: 100%;
+  text-rendering: auto;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 6em;
+  background-color: #6BB130;
+  overflow-y: auto;
+}
+
+h1 {
+  font-size: 0;
+  position: absolute;
+}
+
+.logo {
+  margin: 1em;
+  font-size: 0.9em;
+  display: block;
+  position: relative;
+}
+
+@-webkit-keyframes rotation { to { -webkit-transform: rotate(360deg); } }
+@keyframes rotation { to { transform: rotate(360deg); } }
+
+.logo-gear-l,
+.logo-gear-s {
+  position: absolute;
+  -webkit-animation: rotation linear infinite;
+  animation: rotation linear infinite;
+}
+
+.logo-gear-l {
+  width: 60%;
+  left: 0;
+  top: 35%;
+  -webkit-animation-duration: 10s;
+  animation-duration: 10s;
+}
+
+.logo-gear-s {
+  width: 30%;
+  left: 56%;
+  top: 28%;
+  -webkit-animation-duration: 6450ms;
+  animation-duration: 6450ms;
+  -webkit-animation-direction: reverse;
+  animation-direction: reverse;
+}
+
+header ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+header a,
+header a:visited,
+header a:active {
+  display: block;
+  font-size: 0.9em;
+  text-decoration: none;
+  color: white;
+  padding: 0.8em;
+  position: relative;
+}
+
+header a:hover,
+[data-selected='game+launch'] [data-tag='game+launch'],
+[data-selected='loading'] [data-tag='loading'],
+[data-selected='main+menu'] [data-tag='main+menu'],
+[data-selected='settings'] [data-tag='settings'],
+[data-selected='pause+menu'] [data-tag='pause+menu'],
+[data-selected='level+select'] [data-tag='level+select'],
+[data-selected='store'] [data-tag='store'],
+[data-selected='tutorial'] [data-tag='tutorial'],
+[data-selected='achievements'] [data-tag='achievements'],
+[data-selected='end+of+level'] [data-tag='end+of+level'] {
+  background-color: #508922;
+}
+
+[data-selected='game+launch'] [data-tag='game+launch']:after,
+[data-selected='loading'] [data-tag='loading']:after,
+[data-selected='main+menu'] [data-tag='main+menu']:after,
+[data-selected='settings'] [data-tag='settings']:after,
+[data-selected='pause+menu'] [data-tag='pause+menu']:after,
+[data-selected='level+select'] [data-tag='level+select']:after,
+[data-selected='store'] [data-tag='store']:after,
+[data-selected='tutorial'] [data-tag='tutorial']:after,
+[data-selected='achievements'] [data-tag='achievements']:after,
+[data-selected='end+of+level'] [data-tag='end+of+level']:after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  left: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  position: absolute;
+  border: outset transparent;
+  border-width: 1.46em 0.75em;
+  border-left-style: solid;
+  border-left-color: #508922;
+}
+
+section {
+  padding-left: 6em;
+}
+
+h2 {
+  display: none;
+}
+
+h2 strong {
+  color: #6BB130;
+  font-weight: 400;
+}
+
+ol {
+  list-style: none;
+  overflow: hidden;
+  padding-left: 0;
+}
+
+ol li {
+  overflow: hidden;
+  text-align: center;
+}
+
+article {
+  background-color: #eee;
+  border-radius: 0.5em;
+  padding: 1em;
+  margin: 0 0.2em 1em;
+  text-align: left;
+  display: inline-block;
+}
+
+article img {
+  border: 1px solid #ddd;
+  max-width: 100%;
+  display: block;
+  margin-bottom: 0.75em;
+  background-size: 100%;
+  background-color: #ddd;
+  background-repeat: no-repeat;
+}
+
+article p {
+  display: inline;
+}
+
+article time {
+  display: inline-block;
+  margin-left: 0.5em;
+  font-weight: 200;
+  color: #999;
+}
+
+@media all and (min-width:768px) {
+  h2 {
+    font-weight: 200;
+    font-size: 3em;
+    margin: 1em;
+    display: block;
+  }
+
+  section {
+    padding-left: 11em;
+  }
+
+  article {
+    margin: 0 0.5em 2em;
+  }
+
+  article p {
+    font-size: 1.4em;
+  }
+
+  header {
+    width: 11em;
+  }
+
+  header a,
+  header a:visited,
+  header a:active {
+    padding: 0.8em 2em;
+  }
+
+  .logo {
+    margin: 2em 3em 2em 2em;
+  }
+
+  ol li {
+    display: inline-block;
+    vertical-align: top;
+    width: 50%;
+  }
+}
